@@ -1,6 +1,5 @@
 <!-- 
     Ce fichier permet d'afficher un footer et de fermer les balises body et HTML de la page
-    ceci est un test
 -->
 </main>
 </div>

@@ -17,6 +17,27 @@
     <header>
         <a href="index.php">
             <h1>Pokedex Du Professeur Chen</h1>
+            <h1>       <?php
+session_start();
+?>
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.php"></a>
+        <div>
+            <?php if (!empty($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true): ?>
+                <span class="text-white">
+                    Connecté en tant que : 
+                    <?php echo htmlspecialchars($_SESSION['prenom'] ?? '') . ' ' . htmlspecialchars($_SESSION['nom'] ?? ''); ?>
+                </span>
+                <a href="logout.php" class="btn btn-danger btn-sm ms-3">Se déconnecter</a>
+            <?php else: ?>
+                <a href="login.php" class="btn btn-primary btn-sm">Se connecter</a>
+            <?php endif; ?>
+        </div>
+    </div>
+</nav>
+            </h1>
         </a>
         <form id="search-bar" action="search_pokemon.php">
             <span class="input-group">
